@@ -1,0 +1,48 @@
+internal class Program
+    {
+        
+        static int[] preencheVetor(int n)
+        {
+            int [] v = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"informe o {i + 1}º elemento do vetor: ");
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            return v;
+        }
+
+        static int somaVetor(int[] v)
+        {
+            int soma = 0;
+
+            for (int i = 0; i < v.Length; i++)
+            {
+                soma += v[i];
+            }
+            return soma;
+        }
+        
+        
+        static void Main(string[] args)
+        {
+            int n, soma;
+            int[] v;
+            float media;
+
+            Console.WriteLine("Informe o tamanho do vetor: ");
+            n = int.Parse(Console.ReadLine());
+
+            v = preencheVetor(n);
+
+            soma = somaVetor(v);
+
+            media = (float)soma / n;
+
+            Console.WriteLine($"soma: {soma}");
+            Console.WriteLine(" ");
+            Console.WriteLine($"média: {media}");
+
+            Console.ReadKey();
+        }
+    }
